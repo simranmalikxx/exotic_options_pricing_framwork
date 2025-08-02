@@ -15,7 +15,6 @@ M= 50#Time Steps
 N= 100000  #No of Paths
 K=100
 
-
 def gen_gbm_paths(S,r,sig,T,N,M):
     
     dt = T/M
