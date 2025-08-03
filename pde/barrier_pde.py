@@ -8,7 +8,7 @@ Created on Sat Aug  2 10:57:47 2025
 import numpy as np
 
 S = 100  # Initial Price
-K = 90   # Strike
+K = 100   # Strike
 r = 0.05  # Risk-free Rate
 sig = 0.2  # Volatility
 T = 1      # Maturity
@@ -26,8 +26,8 @@ def pde_up_and_out_call(S, K, r, sig, T, M, N, H):
     dt = T / N
     dS = H / M
 
-    S_grid = np.linspace(0, H, M + 1)
-    V = np.zeros((M + 1, N + 1))
+    S_grid = np.linspace(0, H, M + 1) #array of asset price 0-H evenly in M steps
+    V = np.zeros((M + 1, N + 1))# 2d array of t and S
 
     # Terminal payoff (at maturity)
     V[:, -1] = np.maximum(S_grid - K, 0)
